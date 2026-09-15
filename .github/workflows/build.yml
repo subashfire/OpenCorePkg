@@ -61,16 +61,12 @@ jobs:
       TOOLCHAINS: CLANGPDB
     steps:
       - uses: actions/checkout@v4
-
       - name: Use Docker in rootless mode.
         uses: ScribeMD/rootless-docker@0.2.2
-
       - name: ./build_duet.tool
         run: docker compose run build-duet
-
       - name: ./build_oc.tool
         run: docker compose run build-oc
-
       - name: Upload to Artifacts
         uses: actions/upload-artifact@v4
         with:
@@ -84,16 +80,12 @@ jobs:
       TOOLCHAINS: GCC
     steps:
       - uses: actions/checkout@v4
-
       - name: Use Docker in rootless mode.
         uses: ScribeMD/rootless-docker@0.2.2
-
       - name: ./build_duet.tool
         run: docker compose run build-duet
-
       - name: ./build_oc.tool
         run: docker compose run build-oc
-
       - name: Upload to Artifacts
         uses: actions/upload-artifact@v4
         with:
@@ -107,16 +99,12 @@ jobs:
       TOOLCHAINS: CLANGDWARF
     steps:
       - uses: actions/checkout@v4
-
       - name: Use Docker in rootless mode.
         uses: ScribeMD/rootless-docker@0.2.2
-
       - name: ./build_duet.tool
         run: docker compose run build-duet
-
       - name: ./build_oc.tool
         run: docker compose run build-oc
-
       - name: Upload to Artifacts
         uses: actions/upload-artifact@v4
         with:
@@ -130,16 +118,12 @@ jobs:
       TOOLCHAINS: DOCS
     steps:
       - uses: actions/checkout@v4
-
       - name: Use Docker in rootless mode.
         uses: ScribeMD/rootless-docker@0.2.2
-
       - name: ./build_duet.tool
         run: docker compose run build-duet
-
       - name: ./build_oc.tool
         run: docker compose run build-oc
-
       - name: Upload to Artifacts
         uses: actions/upload-artifact@v4
         with:
@@ -153,15 +137,12 @@ jobs:
       TOOLCHAINS: VS2019
     steps:
       - uses: actions/checkout@v4
-
       - name: ./build_duet.tool
         shell: cmd
         run: build_duet.tool
-
       - name: ./build_oc.tool
         shell: cmd
         run: build_oc.tool
-
       - name: Upload to Artifacts
         uses: actions/upload-artifact@v4
         with:
