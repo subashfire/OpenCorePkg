@@ -32,7 +32,7 @@ jobs:
           brew install musl-cross
 
       - name: Install Dependencies
-        run: brew install openssl mingw-w64
+        run: brew install openssl mingw-w64 nasm
 
       - name: CI Bootstrap
         run: |
@@ -99,6 +99,7 @@ jobs:
     env:
       TOOLCHAINS: CLANGDWARF
     steps:
+      - uses: actions/checkout@v4
       - uses: actions/checkout@v4
       - name: Use Docker in rootless mode.
         uses: ScribeMD/rootless-docker@0.2.2
