@@ -32,7 +32,7 @@ jobs:
           brew install musl-cross
 
       - name: Install Dependencies
-        run: brew install openssl mingw-w64 nasm
+        run: brew install openssl mingw-w64 nasm acpica
 
       - name: CI Bootstrap
         run: |
